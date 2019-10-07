@@ -1,0 +1,374 @@
+C9840-Unset#show ver
+C9840-Unset#show version | i 16
+Cisco IOS XE Software, Version 16.12.01s
+Cisco IOS Software [Gibraltar], C9800 Software (C9800_IOSXE-K9), Version 16.12.1s, RELEASE SOFTWARE (fc3)
+C9840-Unset#
+C9840-Unset#show inv
+C9840-Unset#show inventory
+NAME: "Chassis 1", DESCR: "Cisco C9800-40-K9 Chassis"
+PID: C9800-40-K9       , VID: V03  , SN: TTM231803A6
+
+NAME: "Chassis 1 Power Supply Module 0", DESCR: "Cisco Catalyst Wireless Controller 12V DC Generic Power Supply"
+PID: C9800-AC-750W-R   , VID: V01  , SN: ART2242F89X
+
+NAME: "Chassis 1 Fan Tray", DESCR: "Cisco C9800-40-K9 Fan Tray"
+PID: C9800-40-K9-FAN   , VID:      , SN:
+
+NAME: "module 0", DESCR: "Cisco C9800-40-K9 Modular Interface Processor"
+PID: C9800-40-K9       , VID:      , SN:
+
+NAME: "SPA subslot 0/0", DESCR: "4-port 10G/1G multirate Ethernet Port Adapter"
+PID: BUILT-IN-4X10G/1G , VID: N/A  , SN: JAE87654321
+
+NAME: "subslot 0/0 transceiver 0", DESCR: "GE T"
+PID: ABCU-5710RZ-CS5   , VID: B2   , SN: AGM20404541
+
+NAME: "module R0", DESCR: "Cisco C9800-40-K9 Route Processor"
+PID: C9800-40-K9       , VID: V03  , SN: TTM231803A6
+
+NAME: "module F0", DESCR: "Cisco C9800-40-K9 Embedded Services Processor"
+
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#show ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+Te0/0/0                unassigned      YES unset  up                    up
+Te0/0/1                unassigned      YES unset  down                  down
+Te0/0/2                unassigned      YES unset  down                  down
+Te0/0/3                unassigned      YES unset  down                  down
+GigabitEthernet0       10.85.134.78    YES NVRAM  up                    up
+Vlan1                  unassigned      YES NVRAM  up                    up
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#wr
+Building configuration...
+[OK]
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+*Oct  7 17:35:41.592: %SYS-2-PRIVCFG_ENCRYPT: Successfully encrypted private config file
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#wr er
+Erasing the nvram filesystem will remove all configuration files! Continue? [confirm]
+[OK]
+Erase of nvram: complete
+C9840-Unset#
+C9840-Unset#
+*Oct  7 17:35:49.858: %SYS-7-NV_BLOCK_INIT: Initialized the geometry of nvram
+C9840-Unset#show run | i boot
+boot-start-marker
+boot system bootflash:packages.conf
+boot-end-marker
+diagnostic bootup level minimal
+C9840-Unset#
+C9840-Unset#
+C9840-Unset#reload
+Reload command is being issued on Active unit, this will reload the whole stack
+Proceed with reload? [confirm]
+
+*Oct  7 17:36:06.926: %SYS-5-RELOAD: Reload requested by admin on console. Reload Reason: Reload Command.
+Chassis 1 reloading, reason - Reload command
+Oct  7 17:36:12.125: %PMAN-5-EXITACTION: F0/0: pvp: Process manager is exiting:
+Oct  7 17:36:12.188: %PMAN-5-EXITACTION: C0/0: pvp: Process manager is exiting:
+Oct  7 17:36:13.369: %
+
+
+
+Initializing Hardware ...
+
+System integrity status: 90170200 12030107
+
+
+System Bootstrap, Version 16.10(2r), RELEASE SOFTWARE
+Copyright (c) 1994-2018  by cisco Systems, Inc.
+
+Current image running: Boot ROM0
+Last reset cause: LocalSoft
+
+C9800-40-K9 platform with 33554432 Kbytes of main memory
+
+File size is 0x000015db
+Located packages.conf
+Image size 5595 inode num 22, bks cnt 2 blk size 8*512
+#
+File size is 0x01f143de
+Located C9800-rpboot.16.12.01s.SPA.pkg
+Image size 32588766 inode num 637733, bks cnt 7957 blk size 8*512
+##############################################################################################################################################################################################################################################################################################################################
+Boot image size = 32588766 (0x1f143de) bytes
+
+ROM:RSA Self Test Passed
+ROM:Sha512 Self Test Passed
+
+Package header rev 3 structure detected
+Calculating SHA-1 hash...done
+validate_package_cs: SHA-1 hash:
+	calculated ee8a0ca1:ef59794b:76263ec1:c99dad25:79640e24
+	expected   ee8a0ca1:ef59794b:76263ec1:c99dad25:79640e24
+Validating main package signatures
+
+RSA Signed RELEASE Image Signature Verification Successful.
+Image validated
+
+Both links down, not waiting for other chassis
+Chassis number is 1
+Oct  7 17:38:23.075: %PMAN-3-PROC_EMPTY_EXEC_FILE: R0/0: pvp: Empty executable used for process bt_logger
+Oct  7 17:38:24.549: %PMAN-3-PROC_EMPTY_EXEC_FILE: R0/0: pvp: Empty executable used for process bt_logger
+Oct  7 17:38:25.411: %PMAN-3-PROC_EMPTY_EXEC_FILE: R0/0: pvp: Empty executable used for process bt_logger
+Oct  7 17:38:31.954: %PMAN-3-PROC_EMPTY_EXEC_FILE: R0/0: pvp: Empty executable used for process bt_logger
+Oct  7 17:38:33.768: %PMAN-3-PROC_EMPTY_EXEC_FILE: R0/0: pvp: Empty executable used for process bt_logger
+Oct  7 17:38:36.608: %PMAN-3-PROC_EMPTY_EXEC_FILE: R0/0: pvp: Empty executable used for process bt_logger
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           Cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software [Gibraltar], C9800 Software (C9800_IOSXE-K9), Version 16.12.1s, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2019 by Cisco Systems, Inc.
+Compiled Fri 04-Oct-19 11:11 by mcpre
+
+
+This software version supports only Smart Licensing as the software licensing mechanism.
+
+
+PLEASE READ THE FOLLOWING TERMS CAREFULLY. INSTALLING THE LICENSE OR
+LICENSE KEY PROVIDED FOR ANY CISCO SOFTWARE PRODUCT, PRODUCT FEATURE,
+AND/OR SUBSEQUENTLY PROVIDED SOFTWARE FEATURES (COLLECTIVELY, THE
+"SOFTWARE"), AND/OR USING SUCH SOFTWARE CONSTITUTES YOUR FULL
+ACCEPTANCE OF THE FOLLOWING TERMS. YOU MUST NOT PROCEED FURTHER IF YOU
+ARE NOT WILLING TO BE BOUND BY ALL THE TERMS SET FORTH HEREIN.
+
+Your use of the Software is subject to the Cisco End User License Agreement
+(EULA) and any relevant supplemental terms (SEULA) found at
+http://www.cisco.com/c/en/us/about/legal/cloud-and-software/software-terms.html.
+
+You hereby acknowledge and agree that certain Software and/or features are
+licensed for a particular term, that the license to such Software and/or
+features is valid only for the applicable term and that such Software and/or
+features may be shut down or otherwise terminated by Cisco after expiration
+of the applicable license term (e.g., 90-day trial period). Cisco reserves
+the right to terminate any such Software feature electronically or by any
+other means available. While Cisco may provide alerts, it is your sole
+responsibility to monitor your usage of any such term Software feature to
+ensure that your systems and networks are prepared for a shutdown of the
+Software feature.
+
+
+% Failed to initialize nvram
+
+FIPS: Flash Key Check : Key Not Found, FIPS Mode Not Enabled
+
+All TCP AO KDF Tests Pass
+cisco C9800-40-K9 (1GL) processor (revision 1GL) with 3759871K/6147K bytes of memory.
+Processor board ID TTM231803A6
+1 Virtual Ethernet interface
+4 Ten Gigabit Ethernet interfaces
+32768K bytes of non-volatile configuration memory.
+33554432K bytes of physical memory.
+26255359K bytes of eUSB flash at bootflash:.
+234365527K bytes of SATA hard disk at harddisk:.
+0K bytes of WebUI ODM Files at webui:.
+
+Base Ethernet MAC Address          : 70:6D:15:3D:AE:40
+
+Installation mode is INSTALL
+
+
+         --- System Configuration Dialog ---
+
+Would you like to enter the initial configuration dialog? [yes/no]:
+Loading http://10.85.134.66/ztp-simple.py
+Loading http://10.85.134.66/ztp-simple.py
+
+
+Press RETURN to get started!
+
+
+*Oct  7 17:40:17.051: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+*Oct  7 17:40:17.051: %PNP-6-HTTP_CONNECTING: PnP Discovery trying to connect to PnP server https://devicehelper.cisco.com.:443/pnp/HELLO
+*Oct  7 17:40:19.088: %PMAN-3-PROC_EMPTY_EXEC_FILE: Chassis 1 R0/0: pvp: Empty executable used for process bt_logger
+*Oct  7 17:40:21.083: %PMAN-3-PROC_EMPTY_EXEC_FILE: Chassis 1 R0/0: pvp: Empty executable used for process bt_logger
+*Oct  7 17:40:32.355: %AN-6-AN_ABORTED_BY_CONSOLE_INPUT: Autonomic disabled due to User intervention on console. configure 'autonomic' to enable it.
+*Oct  7 17:41:27.057: %PNP-6-HTTP_CONNECTING: PnP Discovery trying to connect to PnP server https://devicehelper.cisco.com.:443/pnp/HELLO
+*Oct  7 17:41:59.441: %PMAN-3-PROC_EMPTY_EXEC_FILE: Chassis 1 R0/0: pvp: Empty executable used for process bt_logger
+*Oct  7 17:42:01.466: %PMAN-3-PROC_EMPTY_EXEC_FILE: Chassis 1 R0/0: pvp: Empty executable used for process bt_loggerday0guestshell installed successfully
+Current state is: DEPLOYED
+day0guestshell activated successfully
+Current state is: ACTIVATED
+day0guestshell started successfully
+Current state is: RUNNING
+Guestshell enabled successfully
+
+
+HTTP server statistics:
+Accepted connections total: 0
+*Oct  7 17:42:30.771: SHELL-EXECUTION: guestshell started successfully (network interface "Gi0")
+*Oct  7 17:42:30.727: %IM-6-IOX_INST_INFO: Chassis 1 R0/0: ioxman: IOX SERVICE day0guestshell LOG: Guestshell is up at 09/07/2019 17:42:30
+*Oct  7 17:42:31.273: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470151.271:105): avc:  denied  { open } for  pid=10695 comm="linux_iosd-imag" path="/tmp/rp/.container_info.5D9B7906CF35707FAE000001" dev="tmpfs" ino=108030 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:polaris_bexecute_tmp_t:s0 tclass=file permissive=1
+*Oct  7 17:42:32.261: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470152.259:106): avc:  denied  { read } for  pid=10695 comm="linux_iosd-imag" name="container_login_command_test" dev="tmpfs" ino=109909 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:var_run_t:s0 tclass=file permissive=1
+*Oct  7 17:42:32.261: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470152.259:106): avc:  denied  { open } for  pid=10695 comm="linux_iosd-imag" path="/var/run/shell_exec/day0guestshell/cisco_cli/5D9B7906CF35707FAE000001/container_login_command_test" dev="tmpfs" ino=109909 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:var_run_t:s0 tclass=file permissive=1
+*Oct  7 17:42:32.261: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470152.259:107): avc:  denied  { write } for  pid=10695 comm="linux_iosd-imag" name="token" dev="tmpfs" ino=109868 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:var_run_t:s0 tclass=file permissive=1
+*Oct  7 17:42:32.774: SHELL-EXECUTION: executing command "python /bootflash/downloaded_script.py " inside guestshell ...
+*Oct  7 17:42:32.755: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470152.753:108): avc:  denied  { open } for  pid=10695 comm="linux_iosd-imag" path="/tmp/rp/5D9B7906CF35707FAE000001.retcode" dev="tmpfs" ino=114808 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:polaris_bexecute_tmp_t:s0 tclass=file permissive=1
+
+ *** Sample ZTP Day0 Python Script ***
+
+
+Line 1 SUCCESS: hostname JCOHOE-9840-ZTP
+Configure vlan interface, gateway, aaa, and enable netconf-yang
+
+
+
+*Oct  7 17:42:34.488: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470154.486:109): avc:  denied  { read } for  pid=10695 comm="linux_iosd-imag" name="container_login_command_test" dev="tmpfs" ino=113131 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:virt_lxc_var_run_t:s0 tclass=file permissive=1
+*Oct  7 17:42:34.488: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470154.486:109): avc:  denied  { open } for  pid=10695 comm="linux_iosd-imag" path="/vol/harddisk/iox/repo-lxc/day0guestshell/rootfs_mnt/cisco/cisco_cli/5D9B790849DBAA6892000002/container_login_command_test" dev="tmpfs" ino=113131 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:virt_lxc_var_run_t:s0 tclass=file permissive=1
+*Oct  7 17:42:34.488: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470154.486:110): avc:  denied  { read } for  pid=10695 comm="linux_iosd-imag" name="token" dev="tmpfs" ino=113878 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:var_run_t:s0 tclass=file permissive=1
+*Oct  7 17:42:34.488: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470154.486:110): avc:  denied  { open } for  pid=10695 comm="linux_iosd-imag" path="/vol/harddisk/iox/repo-lxc/day0guestshell/rootfs_mnt/cisco/cisco_cli/5D9B790849DBAA6892000002/token" dev="tmpfs" ino=113878 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:var_run_t:s0 tclass=file permissive=1
+*Oct  7 17:42:34.488: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470154.486:111): avc:  denied  { write } for  pid=10695 comm="linux_iosd-imag" name="token" dev="tmpfs" ino=113878 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:var_run_t:s0 tclass=file permissive=1
+*Oct  7 17:42:35.277: %SYS-5-CONFIG_P: Configured programmatically by process XEP_pnp_python from console as  on vty0Line 1 SUCCESS: int GigabitEthernet0
+Line 2 SUCCESS: ip address 10.85.134.78 255.255.255.192
+Line 3 SUCCESS: no shut
+Line 4 SUCCESS: end
+
+*Oct  7 17:42:36.071: %IM-2-IOX_ENABLEMENT: Chassis 1 R0/0: ioxman: IOX is ready.Line 1 SUCCESS: username admin privilege 15 secret 0 Cisco123
+Line 1 SUCCESS: aaa new-model
+Line 2 SUCCESS: aaa authentication login default local
+Line 3 SUCCESS: end
+Line 1 SUCCESS: aaa authorization exec default local
+Line 2 SUCCESS: aaa session-id common
+Line 3 SUCCESS: end
+Line 1 SUCCESS: netconf-yang
+Line 2 SUCCESS: end
+Line 1 SUCCESS: ip http secure-server
+Line 2 SUCCESS: restconf
+Line 3 SUCCESS: end
+Line 1 SUCCESS: line vty 0 15
+Line 2 SUCCESS: transport input all
+Line 3 SUCCESS: exec-timeout 0 0
+Line 4 SUCCESS: end
+
+
+ *** Executing show ip interface brief  ***
+
+
+Interface              IP-Address      OK? Method Status                Protocol
+Te0/0/0                unassigned      YES unset  up                    up
+Te0/0/1                unassigned      YES unset  down                  down
+Te0/0/2                unassigned      YES unset  down                  down
+Te0/0/3                unassigned      YES unset  down                  down
+GigabitEthernet0       10.85.134.78    YES TFTP   up                    up
+Vlan1                  unassigned      YES DHCP   up                    up
+
+
+ *** ZTP Day0 Python Script Execution Complete ***
+
+
+
+
+*Oct  7 17:42:38.352: %SYS-5-CONFIG_P: Configured programmatically by process XEP_pnp_python from console as  on vty0
+*Oct  7 17:42:38.361: %AAA-5-USER_RESET: User admin failed attempts reset by  on vty0
+*Oct  7 17:42:38.392: %SYS-5-CONFIG_P: Configured programmatically by process XEP_pnp_python from console as  on vty0
+*Oct  7 17:42:38.399: %SYS-5-CONFIG_P: Configured programmatically by process XEP_pnp_python from console as  on vty0
+*Oct  7 17:42:38.404: %SYS-5-CONFIG_P: Configured programmatically by process XEP_pnp_python from console as  on vty0
+*Oct  7 17:42:38.412: %SYS-5-CONFIG_P: Configured programmatically by process XEP_pnp_python from console as  on vty0
+*Oct  7 17:42:38.424: %SYS-5-CONFIG_P: Configured programmatically by process XEP_pnp_python from console as  on vty0
+*Oct  7 17:42:38.431: %SYS-5-CONFIG_P: Configured programmatically by process XEP_pnp_python from console as  on vty0
+*Oct  7 17:42:38.360: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470158.358:112): avc:  denied  { read } for  pid=10695 comm="linux_iosd-imag" name="token" dev="tmpfs" ino=113878 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:var_run_t:s0 tclass=file permissive=1
+*Oct  7 17:42:38.360: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470158.358:112): avc:  denied  { open } for  pid=10695 comm="linux_iosd-imag" path="/vol/harddisk/iox/repo-lxc/day0guestshell/rootfs_mnt/cisco/cisco_cli/5D9B790849DBAA6892000002/token" dev="tmpfs" ino=113878 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:var_run_t:s0 tclass=file permissive=1
+*Oct  7 17:42:38.360: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470158.358:113): avc:  denied  { write } for  pid=10695 comm="linux_iosd-imag" name="token" dev="tmpfs" ino=113878 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:var_run_t:s0 tclass=file permissive=1
+*Oct  7 17:42:38.461: %PSD_MOD-5-DMI_NOTIFY_NETCONF_START: Chassis 1 R0/0: psd: PSD/DMI: netconf-yang server has been notified to start
+*Oct  7 17:42:38.464: %SELINUX-3-MISMATCH: Chassis 1 R0/0: audispd: type=AVC msg=audit(1570470158.462:114): avc:  denied  { open } for  pid=10695 comm="linux_iosd-imag" path="/tmp/rp/5D9B790849DBAA6892000002.retcode" dev="tmpfs" ino=113209 scontext=system_u:system_r:polaris_iosd_t:s0 tcontext=system_u:object_r:polaris_bexecute_tmp_t:s0 tclass=file permissive=1
+*Oct  7 17:42:39.780: SHELL-EXECUTION: successfully executed command "python /bootflash/downloaded_script.py " inside guestshell.
+*Oct  7 17:42:39.463: %PSD_MOD-5-DMI_NOTIFY_RESTCONF_START: Chassis 1 R0/0: psd: PSD/DMI: restconf server has been notified to start
+*Oct  7 17:42:41.378: %PMAN-3-PROC_EMPTY_EXEC_FILE: Chassis 1 R0/0: pvp: Empty executable used for process bt_logger
+*Oct  7 17:42:42.249: %PNP-6-HTTP_CONNECTING: PnP Discovery trying to connect to PnP server https://devicehelper.cisco.com.:443/pnp/HELLO
+*Oct  7 17:42:43.399: %PMAN-3-PROC_EMPTY_EXEC_FILE: Chassis 1 R0/0: pvp: Empty executable used for process bt_loggerGuestshell destroyed successfully
+
+*Oct  7 17:42:45.695: %SYS-5-CONFIG_P: Configured programmatically by process DHCP Autoinstall from console as console
+*Oct  7 17:42:45.699: SHELL-EXECUTION: guestshell destroyed successfully
+*Oct  7 17:42:45.699: AUTOINSTALL: Tftp script execution successful for Gi0.
+*Oct  7 17:42:45.700: %SYS-5-CONFIG_P: Configured programmatically by process DHCP Autoinstall from console as vty0
+*Oct  7 17:42:45.701: %SYS-5-CONFIG_P: Configured programmatically by process DHCP Autoinstall from console as vty0
+*Oct  7 17:42:45.702: %SYS-5-CONFIG_P: Configured programmatically by process DHCP Autoinstall from console as vty0
+*Oct  7 17:42:47.454: %PMAN-3-PROC_EMPTY_EXEC_FILE: Chassis 1 R0/0: pvp: Empty executable used for process bt_logger
+*Oct  7 17:42:57.846: %NDBMAN-5-ACTIVE: Chassis 1 R0/0: ndbmand: All data providers active.
+
+User Access Verification
+
+Username: admin
+Password:
+*Oct  7 17:43:03.438: %DMI-5-NACM_INIT: Chassis 1 R0/0: dmiauthd: NACM configuration has been set to its initial configuration.
+*Oct  7 17:43:04.042: %DMI-5-SYNC_START: Chassis 1 R0/0: syncfd: External change to running configuration detected. The running configuration will be synchronized to the NETCONF running data store.
+
+JCOHOE-9840-ZTP>
+JCOHOE-9840-ZTP>
+JCOHOE-9840-ZTP>show
+*Oct  7 17:43:05.108: %DMI-5-ACTIVE: Chassis 1 R0/0: nesd: process is in steady state.
+*Oct  7 17:43:05.663: %SEC_LOGIN-5-LOGIN_SUCCESS: Login Success [user: admin] [Source: LOCAL] [localport: 0] at 17:43:05 UTC Mon Oct 7 2019ip int brief
+Interface              IP-Address      OK? Method Status                Protocol
+Te0/0/0                unassigned      YES unset  up                    up
+Te0/0/1                unassigned      YES unset  down                  down
+Te0/0/2                unassigned      YES unset  down                  down
+Te0/0/3                unassigned      YES unset  down                  down
+GigabitEthernet0       10.85.134.78    YES TFTP   up                    up
+Vlan1                  unassigned      YES DHCP   up                    up
+JCOHOE-9840-ZTP>
+*Oct  7 17:43:07.047: %DMI-5-SYNC_COMPLETE: Chassis 1 R0/0: syncfd: The running configuration has been synchronized to the NETCONF running data store.
+*Oct  7 17:43:07.047: %DMI-5-ACTIVE: Chassis 1 R0/0: syncfd: process is in steady state.
+*Oct  7 17:45:12.865: %PNP-6-HTTP_CONNECTED: PnP Discovery connected to PnP server http://devicehelper.cisco.com.:80/pnp/HELLO
+*Oct  7 17:45:15.000: %SYS-6-CLOCKUPDATE: System clock has been updated from 17:45:12 UTC Mon Oct 7 2019 to 17:45:15 UTC Mon Oct 7 2019, configured from console by vty0.
+Oct  7 17:45:15.000: %PKI-6-AUTHORITATIVE_CLOCK: The system clock has been set.
+Oct  7 17:45:15.003: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:45:15.006: %SMART_LIC-5-SYSTEM_CLOCK_CHANGED: Smart Agent for Licensing System clock has been changed
+Oct  7 17:45:16.007: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:45:16.807: %DMI-5-SYNC_START: Chassis 1 R0/0: syncfd: External change to running configuration detected. The running configuration will be synchronized to the NETCONF running data store.
+Oct  7 17:45:19.519: %DMI-5-SYNC_COMPLETE: Chassis 1 R0/0: syncfd: The running configuration has been synchronized to the NETCONF running data store.
+Oct  7 17:46:16.010: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:46:16.015: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:46:17.016: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:46:18.016: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:46:34.017: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:46:35.018: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:46:51.018: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:46:52.018: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:47:08.019: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:47:09.020: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:47:25.021: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:47:26.022: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Loading http://www.cisco.com/security/pki/trs/ios_core.p7b
+Oct  7 17:47:40.976: %PKI-6-TRUSTPOOL_DOWNLOAD_SUCCESS: Trustpool Download is successful
+Oct  7 17:47:41.482: %IOSXE_DNS-3-UPDATE_FAILED: Update resolv.conf, vrf Mgmt-intf, rc -2
+Oct  7 17:47:41.482: %DHCP-5-RESTART: Interface GigabitEthernet0 is being restarted by DHCP
+
+Oct  7 17:47:41.531: %IP-4-CLASS: Bad IP address and mask 0.0.0.0/32 in class_resolve()
+Oct  7 17:47:42.022: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:47:43.023: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:47:43.483: %LINK-5-CHANGED: Interface GigabitEthernet0, changed state to administratively down
+Oct  7 17:47:44.483: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0, changed state to down
+Oct  7 17:47:59.023: %SYS-5-CONFIG_P: Configured programmatically by process PnP Agent Discovery from console as vty0
+Oct  7 17:47:59.453: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0, changed state to up
