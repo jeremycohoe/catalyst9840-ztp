@@ -8,4 +8,4 @@ In this demo I am using the 9840 WLC running IOS XE 16.12.1s, using Linux Ubuntu
 The Python script is served from the NGINX webserver and is used to configure the hostname, IP, and some additional access details.
 
 ## Demo Video
-See 9 minute recording (no sound) at [https://www.youtube.com/watch?v=qVkXd1nWGVY]()
+See 9 minute recording (no sound) at [https://www.youtube.com/watch?v=qVkXd1nWGVY](https://www.youtube.com/watch?v=qVkXd1nWGVY)
