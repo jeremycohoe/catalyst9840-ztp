@@ -1,0 +1,16 @@
+Prerequisites: IOS 16.12
+
+Enable IOX:
+  conf t
+  iox
+
+To configure the VNIC for Guestshell:
+conf t
+  app-hosting appid guestshell
+  vnic management guest-interface 0 guest-ipaddress 10.85.134.120 netmask 255.255.255.192 gateway 10.85.134.126
+  exit
+  
+
+Enable and enter the Guestshell:
+  guestshell enable
+  guestshell
